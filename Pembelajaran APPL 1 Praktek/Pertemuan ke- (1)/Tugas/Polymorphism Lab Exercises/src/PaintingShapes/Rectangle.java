@@ -4,10 +4,12 @@
  * and open the template in the editor.
  */
 package PaintingShapes;
-
-/**
- *
- * @author fachr
+/*
+Created By 	:Fachri Muhammad Bandang Haq
+NIM 		:191524042
+Course		:D4-1B
+E-mail 		:fachri.muhammad.tif419@polban.ac.id
+Date		:２０２１年３月１５日
  */
 public class Rectangle extends Shape 
 {
