@@ -10,7 +10,7 @@ package PolymorphicSorting;
 // Represents a sales person who has a first name, last 
 // name, and total number of sales. 
 // ******************************************************* 
-public class Salesperson implements Comparable 
+public class Salesperson implements Comparable <Salesperson>
 { 
  private String firstName, lastName; 
  private int totalSales; 
@@ -44,10 +44,18 @@ public class Salesperson implements Comparable
  // Order is based on total sales with the name 
  // (last, then first) breaking a tie. 
  //-------------------------------------------------- 
- public int compareTo(Object other) 
+ @Override
+ public int compareTo(Salesperson other) 
  { 
-    int result; 
-    return result; 
+    int result=0;
+    if(this.totalSales > other.getSales()){
+    result = 1;
+    return result;   
+    }
+    else{
+    return result;    
+    }
+        
  } 
  
  //------------------------- 
