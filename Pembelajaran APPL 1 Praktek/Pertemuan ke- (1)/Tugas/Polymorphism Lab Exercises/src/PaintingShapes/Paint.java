@@ -1,0 +1,39 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package PaintingShapes;
+//****************************************************** 
+// Paint.java 
+// 
+// Represents a type of paint that has a fixed area 
+// covered by a gallon. All measurements are in feet. 
+//****************************************************** 
+/*
+Created By 	:Fachri Muhammad Bandang Haq
+NIM 		:191524042
+Course		:D4-1B
+E-mail 		:fachri.muhammad.tif419@polban.ac.id
+Date		:２０２１年３月１５日
+ */
+public class Paint 
+{ 
+ private double coverage; //number of square feet per gallon 
+ //----------------------------------------- 
+ // Constructor: Sets up the paint object. 
+ //----------------------------------------- 
+ public Paint(double c) 
+ { 
+ coverage = c; 
+ } 
+ //--------------------------------------------------- 
+ // Returns the amount of paint (number of gallons) 
+ // needed to paint the shape given as the parameter. 
+ //--------------------------------------------------- 
+ public double amount(Shape s) 
+ { 
+ System.out.println ("Computing amount for " + s); 
+ return 0; 
+ } 
+} 

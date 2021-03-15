@@ -19,8 +19,10 @@ Date		:２０２１年３月１５日
 public abstract class Shape {
     protected String shapeName;
     
-    abstract void area();
-    
+    public Shape (String name){
+        shapeName = name;
+    }
+    abstract double area();
     @Override
     public String toString ()
     {
