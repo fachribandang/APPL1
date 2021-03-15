@@ -25,7 +25,7 @@ StaffMember[] staffList;
  //----------------------------------------------------------------- 
  public Staff () 
     { 
-    staffList = new StaffMember[6]; 
+    staffList = new StaffMember[8]; 
     staffList[0] = new Executive ("Sam", "123 Main Line", 
     "555-0469", "123-45-6789", 2423.07); 
     staffList[1] = new Employee ("Carla", "456 Off Line", 
@@ -37,9 +37,19 @@ StaffMember[] staffList;
     staffList[4] = new Volunteer ("Norm", "987 Suds Blvd.", 
     "555-8374"); 
     staffList[5] = new Volunteer ("Cliff", "321 Duds Lane", 
-    "555-7282"); 
+    "555-7282");     
     ((Executive)staffList[0]).awardBonus (500.00); 
     ((Hourly)staffList[3]).addHours (40); 
+    
+    staffList[6] = new Commission ("Fachri Bandang", "Bakung 5 ", 
+    "082128832502", "191-252-4042", 6.25 , 0.2); 
+    staffList[7] = new Commission ("Fachri Bandang", "Bakung 5 ", 
+    "082128832502", "1916-252-4042", 9.75 , 0.15); 
+    ((Commission)staffList[6]).addHours(35);
+    ((Commission)staffList[6]).addTotalsales(400);
+    ((Commission)staffList[7]).addHours(40);
+    ((Commission)staffList[7]).addTotalsales(950);
+    
     } 
  //----------------------------------------------------------------- 
  // Pays all staff members. 
