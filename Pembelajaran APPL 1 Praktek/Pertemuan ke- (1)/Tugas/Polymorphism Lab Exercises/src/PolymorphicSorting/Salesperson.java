@@ -52,8 +52,10 @@ public class Salesperson implements Comparable <Salesperson>
     result = 1;
     return result;   
     }
-    else{
+    else  if(this.totalSales < other.getSales()) {
     return result;    
+    }else {
+        return result;
     }
         
  } 
