@@ -23,21 +23,15 @@ import java.awt.event.*;
 import javax.swing.*; 
 public class SpeedControl 
 { 
- // ------------------------------------- 
- // Sets up the frame for the animation. 
- // ------------------------------------- 
- public static void main (String[] args) 
- { 
- JSlider framesPerSecond = new JSlider(JSlider.HORIZONTAL,0,200,30);
- framesPerSecond.setMajorTickSpacing(40);
- framesPerSecond.setMinorTickSpacing(10);
- framesPerSecond.setPaintTicks(true);
- framesPerSecond.setPaintLabels(true);
- framesPerSecond.setAlignmentX(0);
- JFrame frame = new JFrame ("Bouncing Balls"); 
- frame.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE); 
- frame.getContentPane.add(new SpeedControlPanel ()); 
- frame.pack(); 
- frame.setVisible(true); 
+    // ------------------------------------- 
+    // Sets up the frame for the animation. 
+    // ------------------------------------- 
+    public static void main (String[] args) 
+    { 
+        JFrame frame = new JFrame ("Bouncing Balls"); 
+        frame.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE); 
+        frame.getContentPane.add(new SpeedControlPanel ()); 
+        frame.pack(); 
+        frame.setVisible(true); 
+    } 
  } 
-} 

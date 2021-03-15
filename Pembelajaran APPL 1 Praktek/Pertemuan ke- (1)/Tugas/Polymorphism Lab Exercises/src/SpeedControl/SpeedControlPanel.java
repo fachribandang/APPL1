@@ -32,12 +32,7 @@ public class SpeedControlPanel extends JPanel
  // --------------------------------------------- 
  public SpeedControlPanel () 
  { 
- JSlider framesPerSecond = new JSlider(JSlider.HORIZONTAL,0,200,30);
- framesPerSecond.setMajorTickSpacing(40);
- framesPerSecond.setMinorTickSpacing(10);
- framesPerSecond.setPaintTicks(true);
- framesPerSecond.setPaintLabels(true);
- framesPerSecond.setAlignmentX(0);
+
  
  timer = new Timer(30, new ReboundListener()); 
  
@@ -45,6 +40,12 @@ public class SpeedControlPanel extends JPanel
  bouncingBall = new Circle(BALL_SIZE); 
  moveX = moveY = 5; 
  // Set up a slider object here 
+ JSlider framesPerSecond = new JSlider(JSlider.HORIZONTAL,0,200,30);
+ framesPerSecond.setMajorTickSpacing(40);
+ framesPerSecond.setMinorTickSpacing(10);
+ framesPerSecond.setPaintTicks(true);
+ framesPerSecond.setPaintLabels(true);
+ framesPerSecond.setAlignmentX(0);
  setPreferredSize (new Dimension (WIDTH, HEIGHT)); 
  setBackground(Color.black); 
  timer.start(); 
