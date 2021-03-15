@@ -12,10 +12,10 @@ package PaintingShapes;
 public class Rectangle extends Shape 
 {
     private double length,width;
-    public Rectangle(double x,double y) {
+    public Rectangle(double len,double wid) {
         super("Rectangle");
-        length = x;
-        width = y;
+        length = len;
+        width = wid;
               
     }
 
