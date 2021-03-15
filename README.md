@@ -1,4 +1,5 @@
 # APPL1
-## Nama : Fachri Muhammad Bandang Haq
-## NIM : 191524042
-## Kelas : D4-2B
+## Data Makasiswa 
+Nama  : Fachri Muhammad Bandang Haq <br />
+NIM   : 191524042 <br />
+Kelas : D4-2B
