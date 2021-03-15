@@ -24,5 +24,9 @@ public class Rectangle extends Shape
         return length*width;
        
     }
-    
+    @Override
+    public String toString() 
+    { 
+    return super.toString() + " of length " + length + " and width " +width; 
+    } 
 }

@@ -22,8 +22,12 @@ public class Cylinder  extends Shape
     @Override
     double area() {
      double n=0;
-     n = 4*Math.PI*radius*radius*height; 
+     n = Math.PI*radius*radius*height; 
      return n;
     }
-    
+    @Override
+    public String toString() 
+    { 
+    return super.toString() + " of radius " + radius + " and height " +height; 
+    } 
 }
