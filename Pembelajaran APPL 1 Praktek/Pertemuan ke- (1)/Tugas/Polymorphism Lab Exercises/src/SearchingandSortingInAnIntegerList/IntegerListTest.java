@@ -79,6 +79,14 @@ if (loc != -1)
  newVal = scan.nextInt(); 
  list.replaceAll(oldVal,newVal);
  break;
+ case 8: 
+ System.out.print("Enter the value to look for: "); 
+ loc = list.binerySearchD(scan.nextInt()); 
+ if (loc != -1) 
+    System.out.println("Found at location " + loc); 
+ else 
+    System.out.println("Not in list"); 
+ break;
  default: 
  System.out.println("Sorry, invalid choice"); 
  } 
@@ -98,6 +106,7 @@ if (loc != -1)
  System.out.println("5: Print the list"); 
  System.out.println("6: Replace First"); 
  System.out.println("7: Replace All"); 
+ System.out.println("8: Find an element in the list using binary search"); 
  System.out.print("\nEnter your choice: "); 
  } 
 } 
