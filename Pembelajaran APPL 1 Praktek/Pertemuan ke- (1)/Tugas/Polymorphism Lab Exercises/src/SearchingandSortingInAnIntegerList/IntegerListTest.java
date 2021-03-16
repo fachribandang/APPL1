@@ -61,6 +61,13 @@ if (loc != -1)
  case 4: 
  list.print(); 
  break; 
+ case 5: 
+ System.out.println("Input number that you want to change! old number : "); 
+ int oldVal = scan.nextInt(); 
+ System.out.println("Input number that you want to change! new number : "); 
+ int newVal = scan.nextInt(); 
+ list.replaceFirst(oldVal,newVal);
+ break;
  default: 
  System.out.println("Sorry, invalid choice"); 
  } 
@@ -77,6 +84,7 @@ if (loc != -1)
  System.out.println("2: Sort the list using selection sort"); 
  System.out.println("3: Find an element in the list using linear search"); 
  System.out.println("4: Print the list"); 
+ System.out.println("5: Replace First"); 
  System.out.print("\nEnter your choice: "); 
  } 
 } 

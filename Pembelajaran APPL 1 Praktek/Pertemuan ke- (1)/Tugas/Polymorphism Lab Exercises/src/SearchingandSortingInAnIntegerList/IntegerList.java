@@ -70,8 +70,14 @@ public class IntegerList
         } 
     }
     public void replaceFirst(int oldVal, int newVal){
-        int locate;
+        Integer  locate;
         locate = search(oldVal);
+        if (locate != null){
         list[locate] = newVal;
+        }else{
+            System.err.println("Do Nothing ");
+        }
+
+        
     }
 } 
