@@ -48,6 +48,32 @@ public class CirclePanel extends JPanel
  buttonPanel.add(down); 
  // Add the button panel to the bottom of the main panel 
  this.add(buttonPanel, "South"); 
+   JButton cc = new JButton("Choose Color"); 
+  // Create buttons to move the circle 
+ JButton red = new JButton("red"); 
+ red.setBackground(Color.RED);
+ JButton green = new JButton("green"); 
+  green.setBackground(Color.GREEN);
+ 
+ JButton blue = new JButton("blue"); 
+   blue.setBackground(Color.BLUE);
+ JButton yellow = new JButton("yellow"); 
+   yellow.setBackground(Color.YELLOW);
+  // Add listeners to the buttons 
+   cc.addActionListener(new ColorListener (null));  
+ red.addActionListener(new ColorListener (Color.RED)); 
+ green.addActionListener(new ColorListener (Color.GREEN));
+ blue.addActionListener(new ColorListener (Color.BLUE));
+ yellow.addActionListener(new ColorListener (Color.YELLOW));
+ JPanel buttonPanelC = new JPanel();
+ 
+ buttonPanelC.add(cc); 
+ buttonPanelC.add(red); 
+ buttonPanelC.add(green); 
+ buttonPanelC.add(blue); 
+ buttonPanelC.add(yellow); 
+ // Add the button panel to the bottom of the main panel 
+ this.add(buttonPanelC, "North"); 
  } 
  //--------------------------------------------------------------- 
  // Draw circle on CirclePanel 
@@ -83,4 +109,43 @@ public class CirclePanel extends JPanel
  repaint(); 
  } 
  } 
+  private class ColorListener implements ActionListener 
+ { 
+ private Color cR;
+ //--------------------------------------------------------------- 
+ // Parameters tell how to move circle at click. 
+ //--------------------------------------------------------------- 
+ public ColorListener(Color cy) 
+ { 
+ cR = cy;
+ } 
+ //--------------------------------------------------------------- 
+ // Change x and y coordinates and repaint. 
+ //--------------------------------------------------------------- 
+ public void actionPerformed(ActionEvent e) 
+ { 
+c=cR;
+ repaint(); 
+ } 
+ } 
+   private class JColorChooser implements ActionListener 
+ { 
+ private Color cR;
+ //--------------------------------------------------------------- 
+ // Parameters tell how to move circle at click. 
+ //--------------------------------------------------------------- 
+ public JColorChooser(Color cy) 
+ { 
+ cR = cy;
+ } 
+ //--------------------------------------------------------------- 
+ // Change x and y coordinates and repaint. 
+ //--------------------------------------------------------------- 
+ public void actionPerformed(ActionEvent e) 
+ { 
+c=cR;
+ repaint(); 
+ } 
+ } 
 } 
+ 
