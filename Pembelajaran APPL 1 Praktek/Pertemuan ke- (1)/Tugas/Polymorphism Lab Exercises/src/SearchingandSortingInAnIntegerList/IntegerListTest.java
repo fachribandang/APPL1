@@ -35,6 +35,7 @@ public class IntegerListTest
  //------------------------------------------------------- 
  public static void dispatch(int choice) 
  { 
+ int oldVal,newVal;
  int loc; 
  switch(choice) 
  { 
@@ -63,10 +64,17 @@ if (loc != -1)
  break; 
  case 5: 
  System.out.println("Input number that you want to change! old number : "); 
- int oldVal = scan.nextInt(); 
+ oldVal = scan.nextInt(); 
  System.out.println("Input number that you want to change! new number : "); 
- int newVal = scan.nextInt(); 
+ newVal = scan.nextInt(); 
  list.replaceFirst(oldVal,newVal);
+ break;
+ case 6: 
+ System.out.println("Input number that you want to change! old number : "); 
+ oldVal = scan.nextInt(); 
+ System.out.println("Input number that you want to change! new number : "); 
+ newVal = scan.nextInt(); 
+ list.replaceAll(oldVal,newVal);
  break;
  default: 
  System.out.println("Sorry, invalid choice"); 
@@ -85,6 +93,7 @@ if (loc != -1)
  System.out.println("3: Find an element in the list using linear search"); 
  System.out.println("4: Print the list"); 
  System.out.println("5: Replace First"); 
+ System.out.println("6: Replace All"); 
  System.out.print("\nEnter your choice: "); 
  } 
 } 

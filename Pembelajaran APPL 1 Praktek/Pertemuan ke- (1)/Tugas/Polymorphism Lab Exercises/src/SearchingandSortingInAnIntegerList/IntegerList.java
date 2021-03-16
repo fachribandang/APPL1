@@ -72,12 +72,16 @@ public class IntegerList
     public void replaceFirst(int oldVal, int newVal){
         Integer  locate;
         locate = search(oldVal);
-        if (locate != null){
-        list[locate] = newVal;
-        }else{
-            System.err.println("Do Nothing ");
-        }
-
+            if (locate != null){
+                list[locate] = newVal;
+            }
+    }
+    public void replaceAll (int oldVal, int newVal){
+        int[] location; 
         
+        for (int i=0; i<list.length ; i++) 
+        if (list[i] == oldVal) 
+        location = i; 
+        return location; 
     }
 } 
