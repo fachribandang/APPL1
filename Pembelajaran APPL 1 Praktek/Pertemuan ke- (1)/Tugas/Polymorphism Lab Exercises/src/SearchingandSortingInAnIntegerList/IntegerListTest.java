@@ -49,9 +49,12 @@ public class IntegerListTest
  list.randomize(); 
  break; 
  case 2: 
- list.selectionSort(); 
- break; 
+ list.sortIncreasing(); 
+ break;
  case 3: 
+ list.sortDecreasing();
+ break;  
+ case 4: 
  System.out.print("Enter the value to look for: "); 
  loc = list.search(scan.nextInt()); 
 if (loc != -1) 
@@ -59,17 +62,17 @@ if (loc != -1)
  else 
  System.out.println("Not in list"); 
  break; 
- case 4: 
+ case 5: 
  list.print(); 
  break; 
- case 5: 
+ case 6: 
  System.out.println("Input number that you want to change! old number : "); 
  oldVal = scan.nextInt(); 
  System.out.println("Input number that you want to change! new number : "); 
  newVal = scan.nextInt(); 
  list.replaceFirst(oldVal,newVal);
  break;
- case 6: 
+ case 7: 
  System.out.println("Input number that you want to change! old number : "); 
  oldVal = scan.nextInt(); 
  System.out.println("Input number that you want to change! new number : "); 
@@ -89,11 +92,12 @@ if (loc != -1)
  System.out.println(" ===="); 
  System.out.println("0: Quit"); 
  System.out.println("1: Create a new list (** do this first!! **)"); 
- System.out.println("2: Sort the list using selection sort"); 
- System.out.println("3: Find an element in the list using linear search"); 
- System.out.println("4: Print the list"); 
- System.out.println("5: Replace First"); 
- System.out.println("6: Replace All"); 
+ System.out.println("2: Sort the list using selection sorts Increasing");
+ System.out.println("3: Sort the list using selection sorts Decreasing"); 
+ System.out.println("4: Find an element in the list using linear search"); 
+ System.out.println("5: Print the list"); 
+ System.out.println("6: Replace First"); 
+ System.out.println("7: Replace All"); 
  System.out.print("\nEnter your choice: "); 
  } 
 } 

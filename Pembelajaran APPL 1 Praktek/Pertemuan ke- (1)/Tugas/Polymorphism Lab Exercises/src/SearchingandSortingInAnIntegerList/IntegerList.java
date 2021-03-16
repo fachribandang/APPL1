@@ -53,7 +53,7 @@ public class IntegerList
  //------------------------------------------------------- 
  //sort the list into ascending order using the selection sort algorithm 
  //------------------------------------------------------- 
-    public void selectionSort() 
+    public void sortIncreasing() 
     { 
     int minIndex; 
         for (int i=0; i < list.length-1; i++) 
@@ -69,6 +69,22 @@ public class IntegerList
             list[minIndex] = temp; 
         } 
     }
+        public void sortDecreasing() 
+    { 
+    int minIndex; 
+        for (int i=0; i < list.length-1; i++) 
+        { 
+            //find smallest element in list starting at location i 
+            minIndex = i; 
+            for (int j = i+1; j < list.length; j++) 
+            if (list[j] > list[minIndex]) 
+            minIndex = j; 
+            //swap list[i] with smallest element 
+            int temp = list[i]; 
+           list[i] = list[minIndex]; 
+            list[minIndex] = temp; 
+        } 
+    }
     public void replaceFirst(int oldVal, int newVal){
         Integer  locate;
         locate = search(oldVal);
@@ -77,11 +93,11 @@ public class IntegerList
             }
     }
     public void replaceAll (int oldVal, int newVal){
-        int[] location; 
-        
-        for (int i=0; i<list.length ; i++) 
-        if (list[i] == oldVal) 
-        location = i; 
-        return location; 
+        int n = list.length;
+        for (int i=0; i<n; i++){
+            if (list[i] == oldVal) {
+                list [i] = newVal;
+            }
+        } 
     }
 } 
