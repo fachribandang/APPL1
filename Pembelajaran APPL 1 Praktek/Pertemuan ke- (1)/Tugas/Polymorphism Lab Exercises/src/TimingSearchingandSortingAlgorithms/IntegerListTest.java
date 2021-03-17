@@ -37,7 +37,7 @@ static Scanner scan = new Scanner(System.in);
  { 
  int loc; 
  int val; 
- long time1=0, time2=0; 
+ long time1, time2; 
  switch(choice) 
  { 
  case 0: 
@@ -54,18 +54,21 @@ static Scanner scan = new Scanner(System.in);
  list = new IntegerList(scan.nextInt()); 
  System.out.println("List is created."); 
       time2 = System.currentTimeMillis();
+      
  break; 
  case 3: 
           time1 = System.currentTimeMillis();
  list.randomize(); 
  System.out.println("List is filled with random elements."); 
       time2 = System.currentTimeMillis();
+            System.out.println("waktu Time : "+System.currentTimeMillis());
  break; 
  case 4: 
           time1 = System.currentTimeMillis();
  list.fillSorted(); 
  System.out.println("List is filled with sorted elements."); 
       time2 = System.currentTimeMillis();
+                  System.out.println("waktu Time : "+System.currentTimeMillis());
  break; 
  case 5: 
           time1 = System.currentTimeMillis();
@@ -76,7 +79,8 @@ static Scanner scan = new Scanner(System.in);
  System.out.println("Found at location " + loc); 
  else 
  System.out.println("Not in list");
-     time2 = System.currentTimeMillis(); 
+     time2 = System.currentTimeMillis();
+                 System.out.println("waktu Time : "+System.currentTimeMillis());
  break; 
  case 6: 
           time1 = System.currentTimeMillis();
@@ -94,16 +98,17 @@ static Scanner scan = new Scanner(System.in);
  list.sortIncreasing(); 
  System.out.println("List has been sorted."); 
       time2 = System.currentTimeMillis();
+                  System.out.println("waktu Time : "+System.currentTimeMillis());
  break; 
  case 8: 
-          time1 = System.currentTimeMillis();
+       time1 = System.currentTimeMillis();
  list.sortDecreasing(); 
  System.out.println("List has been sorted."); 
       time2 = System.currentTimeMillis();
+                  System.out.println("waktu Time : "+System.currentTimeMillis());
  break; 
   case 9: 
-      System.err.println("waktu Time 1 : "+time1);
-      System.err.println("waktu Time 2 : "+time2);
+      System.out.println("waktu Time 1 : "+System.currentTimeMillis());
  break; 
  default: 
  System.out.println("Sorry, invalid choice"); 
