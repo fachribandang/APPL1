@@ -49,47 +49,61 @@ static Scanner scan = new Scanner(System.in);
      time2 = System.currentTimeMillis();
  break; 
  case 2: 
+          time1 = System.currentTimeMillis();
  System.out.println("How big should the list be?"); 
  list = new IntegerList(scan.nextInt()); 
  System.out.println("List is created."); 
+      time2 = System.currentTimeMillis();
  break; 
  case 3: 
+          time1 = System.currentTimeMillis();
  list.randomize(); 
  System.out.println("List is filled with random elements."); 
+      time2 = System.currentTimeMillis();
  break; 
  case 4: 
+          time1 = System.currentTimeMillis();
  list.fillSorted(); 
  System.out.println("List is filled with sorted elements."); 
+      time2 = System.currentTimeMillis();
  break; 
  case 5: 
+          time1 = System.currentTimeMillis();
  System.out.print("Enter the value to look for: "); 
  val = scan.nextInt(); 
  loc = list.linearSearch(val); 
  if (loc != -1) 
  System.out.println("Found at location " + loc); 
  else 
- System.out.println("Not in list"); 
+ System.out.println("Not in list");
+     time2 = System.currentTimeMillis(); 
  break; 
  case 6: 
+          time1 = System.currentTimeMillis();
  System.out.print("Enter the value to look for: "); 
  val = scan.nextInt(); 
  loc = list.binarySearch(val); 
  if (loc != -1) 
  System.out.println("Found at location " + loc); 
  else 
- System.out.println("Not in list"); 
+ System.out.println("Not in list");
+     time2 = System.currentTimeMillis(); 
  break; 
  case 7: 
+          time1 = System.currentTimeMillis();
  list.sortIncreasing(); 
  System.out.println("List has been sorted."); 
+      time2 = System.currentTimeMillis();
  break; 
  case 8: 
+          time1 = System.currentTimeMillis();
  list.sortDecreasing(); 
  System.out.println("List has been sorted."); 
+      time2 = System.currentTimeMillis();
  break; 
   case 9: 
-      System.err.println("waktu Time 1 : ");
-      System.err.println("waktu Time 2 : ");
+      System.err.println("waktu Time 1 : "+time1);
+      System.err.println("waktu Time 2 : "+time2);
  break; 
  default: 
  System.out.println("Sorry, invalid choice"); 
@@ -114,6 +128,7 @@ static Scanner scan = new Scanner(System.in);
  " increasing order"); 
  System.out.println("8: Use insertion sort to sort the list into " + 
  " decreasing order"); 
+  System.out.println("9: Print Time1 and Time 2 ");
  System.out.print("\nEnter your choice: ");  
 }
 }
