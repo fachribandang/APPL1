@@ -10,6 +10,7 @@ package TimingSearchingandSortingAlgorithms;
  * @author fachr
  */
 public class IntegerList {
+
  int[] list; //values in the list 
  //------------------------------------------------------------ 
  // Constructor -- takes an integer and creates a list of that 

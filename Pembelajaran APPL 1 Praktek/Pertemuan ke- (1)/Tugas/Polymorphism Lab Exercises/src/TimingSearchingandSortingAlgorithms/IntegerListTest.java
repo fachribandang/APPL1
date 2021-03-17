@@ -6,14 +6,15 @@
 package TimingSearchingandSortingAlgorithms;
 
 import java.util.Scanner;
-
+import java.lang.*;
 /**
  *
  * @author fachr
  */
 public class IntegerListTest {
 static IntegerList list = new IntegerList(10); 
- static Scanner scan = new Scanner(System.in); 
+static Scanner scan = new Scanner(System.in);  
+ 
  //------------------------------------------------------ 
  // main -- creates an initial list, then repeatedly prints 
  // the menu and does what the user asks until they quit 
@@ -36,14 +37,16 @@ static IntegerList list = new IntegerList(10);
  { 
  int loc; 
  int val; 
- long time1, time2; 
+ long time1=0, time2=0; 
  switch(choice) 
  { 
  case 0: 
  System.out.println("Bye!"); 
  break; 
  case 1: 
+     time1 = System.currentTimeMillis();
  System.out.println(list); 
+     time2 = System.currentTimeMillis();
  break; 
  case 2: 
  System.out.println("How big should the list be?"); 
@@ -83,6 +86,10 @@ static IntegerList list = new IntegerList(10);
  case 8: 
  list.sortDecreasing(); 
  System.out.println("List has been sorted."); 
+ break; 
+  case 9: 
+      System.err.println("waktu Time 1 : ");
+      System.err.println("waktu Time 2 : ");
  break; 
  default: 
  System.out.println("Sorry, invalid choice"); 
