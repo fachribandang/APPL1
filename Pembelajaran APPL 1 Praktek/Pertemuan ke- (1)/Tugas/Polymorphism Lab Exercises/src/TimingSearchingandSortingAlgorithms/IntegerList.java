@@ -74,18 +74,55 @@ public class IntegerList {
  }
 
     private int minIndex(int[] list, int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int result = i;
+        for (int j=i+1; j < list.length; j++){
+            if (list[j] < list[i]) 
+            result = j; 
+        } 
+    return result;
     }
 
     private void swap(int[] list, int i, int minIndex) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            int temp = list[i]; 
+            list[i] = list[minIndex]; 
+            list[minIndex] = temp;
     }
 
     int binarySearch(int val) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+           int size  = list.length;
+        int locate = bs(list, 0, size-1, val);
+        return locate;
     }
 
     void sortDecreasing() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         int minIndex; 
+        for (int i=0; i < list.length-1; i++) 
+        { 
+            //find smallest element in list starting at location i 
+            minIndex = i; 
+            for (int j = i+1; j < list.length; j++) 
+            if (list[j] > list[minIndex]) 
+            minIndex = j; 
+            //swap list[i] with smallest element 
+            int temp = list[i]; 
+           list[i] = list[minIndex]; 
+            list[minIndex] = temp; 
+        }
     }
+        int bs(int arr[], int l, int r, int x) 
+    { 
+    if (r >= l) { 
+        int mid = l + (r - l) / 2; 
+
+        if (arr[mid] == x) 
+            return mid; 
+
+        if (arr[mid] > x) 
+            return bs(arr, l, mid - 1, x); 
+
+        return bs(arr, mid + 1, r, x); 
+    } 
+    
+    return -1; 
+    } 
 }
