@@ -32,8 +32,5 @@ public class CopyingaFile {
       System.out.print("Nama File tidak ada "); 
       e.printStackTrace();
     }
-
-
-
   }
 }
