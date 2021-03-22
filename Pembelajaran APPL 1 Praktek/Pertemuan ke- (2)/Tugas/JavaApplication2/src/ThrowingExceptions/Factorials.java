@@ -17,14 +17,15 @@ public class Factorials
     { 
 
         int val = -1;
-        while (val < 0){
+        while (val < 0 || val >=16){
             System.out.print("Enter an integer: "); 
             val=  scan.nextInt(); 
         try{
-            throw new IllegalArgumentException("tidak boleh negatif!");
+            if (val <= -1 || val >=16)
+                throw new IllegalArgumentException("Niai tidak boleh negatif! dan tidak lebih dari 16!");
         }catch(Exception e) 
             {
-            System.out.println("Niai tidak boleh negatif!"); 
+                    System.out.println("Niai tidak boleh negatif! dan tidak lebih dari 16!"); 
             }
         }
         System.out.println("Factorial(" + val + ") = " + MathUtils.factorial(val)); 
