@@ -1,0 +1,13 @@
+TestTileCopying:
+[
+dummy textdummy textdummy textdummy textdummy textdummy textdummy text
+dummy textdummy textdummy textdummy textdummy textdummy text
+dummy textdummy textdummy textdummy textdummy textdummy text
+dummy textdummy textdummy textdummy textdummy text
+dummy textdummy textdummy textdummy textdummy text
+dummy textdummy textdummy textdummy textdummy text
+dummy textdummy textdummy text
+dummy textdummy text
+dummy text
+dummy text
+]
