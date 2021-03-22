@@ -22,12 +22,14 @@ public class CountLetters
  word = word.toUpperCase(); 
  
  //convert to all upper case 
- try {
+ try 
+ {
   //  Block of code to try
    for (int i=0; i < word.length(); i++) 
     counts[word.charAt(i)-'A']++; 
 }
-catch(Exception e) {
+catch(Exception e) 
+{
       System.out.println("Not a Letter!");
       System.out.println(e);
 }
