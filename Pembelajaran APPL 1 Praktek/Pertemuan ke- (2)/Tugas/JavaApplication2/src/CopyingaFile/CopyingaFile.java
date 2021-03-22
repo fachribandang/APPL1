@@ -16,20 +16,24 @@ public class CopyingaFile {
       Scanner scan = new Scanner(System.in);
       System.out.print("Masukkan nama file yang ingin di copy (misal : TestTileCopying.txt): "); 
       String FileName  = scan.nextLine();
-      
+
       File  FileObject= new File(FileName);
-      Scanner FileReadr = new Scanner(FileObject);
-      while (FileReadr.hasNextLine()) {
-        String data = FileReadr.nextLine();
-        System.out.println(data);
+      FileWriter FileWriter = new FileWriter("Copied"+FileName);
+      Scanner FileReader = new Scanner(FileObject);
+      
+      while (FileReader.hasNextLine()) {
+        String data = FileReader.nextLine();
+        FileWriter.write(data);
       }
-      FileReadr.close();
+      FileReader.close();
+      FileWriter.close();
+      
     } catch (FileNotFoundException e) {
-      System.out.println("An error occurred.");
+      System.out.print("Nama File tidak ada "); 
       e.printStackTrace();
     }
-      FileWriter myWriter = new FileWriter("TestTileCopying2.txt");
-      myWriter.write("Files in Java might be tricky, but it is fun enough!");
-      myWriter.close();
+
+
+
   }
 }
