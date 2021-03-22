@@ -29,7 +29,7 @@ public class CountLetters
 }
 catch(Exception e) {
       System.out.println("Not a Letter!");
-      System.out.println("ada yang bukan termasuk huruf");
+      System.out.println(e);
 }
  
  //print frequencies 
