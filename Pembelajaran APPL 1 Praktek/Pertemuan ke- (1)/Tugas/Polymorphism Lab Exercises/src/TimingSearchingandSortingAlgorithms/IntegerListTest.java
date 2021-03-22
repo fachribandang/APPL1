@@ -37,7 +37,7 @@ static Scanner scan = new Scanner(System.in);
  { 
  int loc; 
  int val; 
- long time1, time2; 
+ long time1 = 0, time2 = 0; 
  switch(choice) 
  { 
  case 0: 
@@ -45,7 +45,7 @@ static Scanner scan = new Scanner(System.in);
  break; 
  case 1: 
      time1 = System.currentTimeMillis();
- System.out.println(list); 
+    System.out.println(list); 
      time2 = System.currentTimeMillis();
  break; 
  case 2: 
@@ -108,7 +108,10 @@ static Scanner scan = new Scanner(System.in);
                   System.out.println("waktu Time : "+System.currentTimeMillis());
  break; 
   case 9: 
-      System.out.println("waktu Time 1 : "+System.currentTimeMillis());
+if (time1 != 0){
+          System.out.println("waktu Time 1 : "+ time1);
+          System.out.println("waktu Time 2 : "+ time2);
+}
  break; 
  default: 
  System.out.println("Sorry, invalid choice"); 
