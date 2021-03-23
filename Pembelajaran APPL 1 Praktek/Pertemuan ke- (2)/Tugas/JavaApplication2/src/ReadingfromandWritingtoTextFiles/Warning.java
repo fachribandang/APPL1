@@ -29,22 +29,22 @@ public class Warning
 try 
  { 
  // Set up scanner to input file 
+    File  FileObject= new File(inputName);
+    Scanner FileReader = new Scanner(FileObject);
  // Set up the output file stream 
+    FileWriter FileWriter;
  // Print a header to the output file 
- File  FileObject= new File(inputName); 
- Scanner FileReader = new Scanner(FileObject);
- FileWriter FileWriter;
- outFile.println (); 
- outFile.println ("Students on Academic Warning"); 
- outFile.println (); 
+    outFile.println (); 
+    outFile.println ("Students on Academic Warning"); 
+    outFile.println (); 
  // Process the input file, one token at a time 
  
- while (true) 
- { 
- // Get the credit hours and quality points and 
- // determine if the student is on warning. If so, 
- // write the student data to the output file. 
- } 
+    while (true) 
+    { 
+    // Get the credit hours and quality points and 
+    // determine if the student is on warning. If so, 
+    // write the student data to the output file. 
+    } 
  // Close output file 
  } 
 // catch (FileNotFoundException exception) 
