@@ -28,8 +28,8 @@ public class studentDataBase {
     studentList[8]=new student ("Bird", 84 ,168);   
     studentList[9]=new student ("Summers", 52 ,83.2);    
 
-OlahData.WriteFile(studentList);
-OlahData.ReadFile();
+OlahData.WriteFile(studentList,"student.dat");
+OlahData.ReadFile("student.dat");
 
 
 //        for (student item : studentList) 

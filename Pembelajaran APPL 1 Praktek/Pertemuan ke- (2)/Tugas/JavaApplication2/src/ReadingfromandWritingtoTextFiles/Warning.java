@@ -11,6 +11,7 @@ import java.io.FileNotFoundException;  // Import this class to handle errors
 import java.util.Scanner; // Import the Scanner class to read text files
 import java.io.FileWriter;   // Import the FileWriter class
 import java.io.IOException;
+import java.util.LinkedList;
 public class Warning 
 { 
  // -------------------------------------------------------------------- 
@@ -25,7 +26,9 @@ public class Warning
  double gpa; // grade point (quality point) average 
  String line, name, inputName = "students.dat"; 
  String outputName = "warning.dat"; 
-try 
+     studentFileHandler OlahData = new studentFileHandler() ; 
+ LinkedList<student> studentwarninglist = new LinkedList<student>();
+ try 
  { 
  // Set up scanner to input file 
     File  FileObject= new File(inputName);
@@ -33,16 +36,33 @@ try
  // Set up the output file stream 
     FileWriter FileWriter;
  // Print a header to the output file 
-    outFile.println (); 
     outFile.println ("Students on Academic Warning"); 
-    outFile.println (); 
- // Process the input file, one token at a time 
+
+ // Process the input file, one token at a time
+
             while (FileReader.hasNextLine()) {
-            name = FileReader.next();  
+            try{
+                name = FileReader.next();
+
             creditHrs = FileReader.nextInt();
             qualityPts = FileReader.nextDouble();
             student tempstudent =new student (name,creditHrs,qualityPts);
-                System.out.println(tempstudent.tofullkontent());
+            gpa = tempstudent.getGradePointAverage();
+            
+            
+            if (tempstudent.getSemesterHoursEarned()<30 && tempstudent.getGradePointAverage()<1.5){
+                studentwarninglist.add(tempstudent);
+            }
+            else if (tempstudent.getSemesterHoursEarned()<60 && tempstudent.getGradePointAverage()<1.75){
+                studentwarninglist.add(tempstudent);
+            }
+            else if  (tempstudent.getGradePointAverage()<2.0){
+                studentwarninglist.add(tempstudent);
+            }
+            
+            }  catch (Exception e){
+                
+            }
             }
             FileReader.close();
  } 
@@ -57,6 +77,9 @@ try
  catch (NumberFormatException e) 
  { 
  System.out.println ("Format error in input file: " + e); 
- } 
+ }
+        student[] array = (student[]) studentwarninglist.toArray();
+        OlahData.WriteFile(array,"warning.dat");
+        OlahData.ReadFile("warning.dat");
  } 
 }

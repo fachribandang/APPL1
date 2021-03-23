@@ -11,6 +11,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.LinkedList;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -24,8 +25,8 @@ public class studentFileHandler {
     String NamaFIle= "students.dat";
     FileWriter Writer;
     FileReader Reader;  
-    public void ReadFile() {
-      File  FileObject= new File(NamaFIle);
+    public void ReadFile(String namadile) {
+      File  FileObject= new File(namadile);
         try {
             Scanner reader = new Scanner(FileObject);
             while (reader.hasNextLine()) {
@@ -38,10 +39,10 @@ public class studentFileHandler {
             Logger.getLogger(studentFileHandler.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    public void WriteFile(student[] studentsList) {
+
+    public void WriteFile( LinkedList<student> studentsList,String namafile ) {
         try {
-            Writer = new FileWriter(NamaFIle);
+            Writer = new FileWriter(namafile);
         } catch (IOException ex) {
             Logger.getLogger(studentFileHandler.class.getName()).log(Level.SEVERE, null, ex);
         }
