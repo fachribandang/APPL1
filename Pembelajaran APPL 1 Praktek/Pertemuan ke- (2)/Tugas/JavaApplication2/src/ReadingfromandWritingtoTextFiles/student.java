@@ -17,8 +17,7 @@ public class student
     student (String name,Integer Hours, double Point){
     this.Name=name;
     this.SemesterHoursEarned=Hours;
-    this.QualityPointEarned=Point;
-          
+    this.QualityPointEarned=Point;     
     }
     public String getName() {
         return Name;

@@ -5,11 +5,13 @@
  */
 package ReadingfromandWritingtoTextFiles;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -22,14 +24,19 @@ public class studentFileHandler {
     String NamaFIle= "students.dat";
     FileWriter Writer;
     FileReader Reader;  
-
     public void ReadFile() {
+      File  FileObject= new File(NamaFIle);
         try {
-            this.Reader = new FileReader(NamaFIle);
+            Scanner reader = new Scanner(FileObject);
+            while (reader.hasNextLine()) {
+            String data = reader.nextLine();
+            reader.close();
+      }
         } catch (FileNotFoundException ex) {
             Logger.getLogger(studentFileHandler.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
     public void WriteFile(student[] studentsList) {
         try {
             Writer = new FileWriter(NamaFIle);
