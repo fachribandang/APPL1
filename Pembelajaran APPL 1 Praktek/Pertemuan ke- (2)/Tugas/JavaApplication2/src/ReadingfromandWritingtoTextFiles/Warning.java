@@ -5,8 +5,7 @@ package ReadingfromandWritingtoTextFiles;
 // 
 // Reads student data from a text file and writes data to another text file. 
 // **************************************************************************** 
-import java.util.Scanner; 
-import java.io.*; 
+
 import java.io.File;  // Import the File class
 import java.io.FileNotFoundException;  // Import this class to handle errors
 import java.util.Scanner; // Import the Scanner class to read text files
@@ -38,23 +37,23 @@ try
     outFile.println ("Students on Academic Warning"); 
     outFile.println (); 
  // Process the input file, one token at a time 
- 
-    while (true) 
-    { 
-    // Get the credit hours and quality points and 
-    // determine if the student is on warning. If so, 
-    // write the student data to the output file. 
-    } 
- // Close output file 
+            while (FileReader.hasNextLine()) {
+            name = FileReader.next();  
+            creditHrs = FileReader.nextInt();
+            qualityPts = FileReader.nextDouble();
+            student tempstudent =new student (name,creditHrs,qualityPts);
+                System.out.println(tempstudent.tofullkontent());
+            }
+            FileReader.close();
  } 
-// catch (FileNotFoundException exception) 
-// { 
-// System.out.println ("The file " + inputName + " was not found."); 
-// } 
-// catch (IOException exception) 
-// { 
-// System.out.println (exception); 
-// } 
+ catch (FileNotFoundException exception) 
+ { 
+ System.out.println ("The file " + inputName + " was not found."); 
+ } 
+ catch (IOException exception) 
+ { 
+ System.out.println (exception); 
+ } 
  catch (NumberFormatException e) 
  { 
  System.out.println ("Format error in input file: " + e); 

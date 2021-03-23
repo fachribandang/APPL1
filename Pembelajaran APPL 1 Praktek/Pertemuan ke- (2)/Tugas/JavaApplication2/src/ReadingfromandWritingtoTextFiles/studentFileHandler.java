@@ -29,9 +29,11 @@ public class studentFileHandler {
         try {
             Scanner reader = new Scanner(FileObject);
             while (reader.hasNextLine()) {
-            String data = reader.nextLine();
+            String data = reader.nextLine();  
+           
+                System.out.println(data);
+            }
             reader.close();
-      }
         } catch (FileNotFoundException ex) {
             Logger.getLogger(studentFileHandler.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -47,7 +49,7 @@ public class studentFileHandler {
         { 
             String data = item.getName()+" "+item.getSemesterHoursEarned()+" "+item.getQualityPointEarned();
             try {
-                Writer.write(data);
+                Writer.write(data+"\n");
             } catch (IOException ex) {
                 Logger.getLogger(studentFileHandler.class.getName()).log(Level.SEVERE, null, ex);
             }

@@ -13,7 +13,7 @@ public class student
 {
     private String Name;
     private Integer SemesterHoursEarned;
-    private double QualityPointEarned;
+    private Double QualityPointEarned;
     student (String name,Integer Hours, double Point){
     this.Name=name;
     this.SemesterHoursEarned=Hours;
@@ -42,4 +42,10 @@ public class student
         return QualityPointEarned / SemesterHoursEarned;
     }   
     
+    public String tofullkontent(){
+        
+        String tempI = SemesterHoursEarned.toString();
+        String tempD = QualityPointEarned.toString();
+        return Name + " "+ tempI+ " "+ tempD;
+                }
 }

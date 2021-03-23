@@ -28,7 +28,9 @@ public class studentDataBase {
     studentList[8]=new student ("Bird", 84 ,168);   
     studentList[9]=new student ("Summers", 52 ,83.2);    
 
-//    OlahData.WriteFile(studentList);
+OlahData.WriteFile(studentList);
+OlahData.ReadFile();
+
 
 //        for (student item : studentList) 
 //        { 
