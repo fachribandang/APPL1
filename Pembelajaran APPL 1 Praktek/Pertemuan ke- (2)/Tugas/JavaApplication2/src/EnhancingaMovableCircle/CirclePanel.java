@@ -95,8 +95,10 @@ public class CirclePanel extends JPanel
  //--------------------------------------------------------------- 
  public void actionPerformed(ActionEvent e) 
  { 
- x += dx; 
- y += dy; 
+    if(x>0){
+     x += dx;    
+     y += dy;  
+    }
  repaint(); 
  } 
  } 
