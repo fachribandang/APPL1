@@ -8,6 +8,7 @@ package ReadingfromandWritingtoTextFiles;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -29,12 +30,26 @@ public class studentFileHandler {
             Logger.getLogger(studentFileHandler.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    public void WriteFile() {
+    public void WriteFile(student[] studentsList) {
         try {
-            this.Writer = new FileWriter(NamaFIle);
-        } catch (FileNotFoundException ex) {
+            Writer = new FileWriter(NamaFIle);
+        } catch (IOException ex) {
             Logger.getLogger(studentFileHandler.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+        for (student item : studentsList) 
+        { 
+            String data = item.getName()+" "+item.getSemesterHoursEarned()+" "+item.getQualityPointEarned();
+            try {
+                Writer.write(data);
+            } catch (IOException ex) {
+                Logger.getLogger(studentFileHandler.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        try {
+            Writer.close();
+        } catch (IOException ex) {
+            Logger.getLogger(studentFileHandler.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 }
