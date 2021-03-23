@@ -78,8 +78,7 @@ public class Warning
  { 
  System.out.println ("Format error in input file: " + e); 
  }
-        student[] array = (student[]) studentwarninglist.toArray();
-        OlahData.WriteFile(array,"warning.dat");
+        OlahData.WriteFile(studentwarninglist,"warning.dat");
         OlahData.ReadFile("warning.dat");
  } 
 }
