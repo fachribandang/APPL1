@@ -16,10 +16,10 @@ import java.awt.event.*;
 import javax.swing.*; 
 public class RatePanel extends JPanel 
 { 
-    private double[] rate; // exchange rates 
+ private double[] rate; // exchange rates 
  private String[] currencyName; 
  private JLabel result; 
-     private JButton compute; 
+ private JTextField  testField;
  // ------------------------------------------------------------ 
  // Sets up a panel to convert cost from one of 6 currencies 
  // into U.S. Dollars. The panel contains a heading, a text 
@@ -46,8 +46,15 @@ public class RatePanel extends JPanel
          
  result = new JLabel (" ------------ "); 
  add (title); 
+ testField = new JTextField();
+ testField.setText("amount");
+ testField.setPreferredSize( new Dimension( 60, 24 ) );
+ add(testField);
  add (result); 
  box.addActionListener(new ComboListener());
+ 
+ // create empty JTextField
+
  } 
  // ****************************************************** 
  // Represents an action listener for the combo box. 
@@ -64,11 +71,12 @@ public class RatePanel extends JPanel
  // -------------------------------------------------- 
  public void actionPerformed (ActionEvent event) 
  { 
+        int mount = Integer.parseInt(testField.getText()) ;
         JComboBox cb = (JComboBox)event.getSource();
         int countryindx = cb.getSelectedIndex();
  int index = countryindx; 
  result.setText ("1 " + currencyName[index] + 
- " = " + rate[index] + " U.S. Dollars"); 
+ " = " + rate[index] * mount+ " U.S. Dollars"); 
 
  } 
  } 
